@@ -1,1 +1,5 @@
-test
+Plot the price changes of an individual item. Talk about what might have led to those changes. For example toilet paper during covid, etc. 
+Calculate the inflation adjusted prices for Amazon products. Plot side by side with pre-inflation adjusted prices. 
+Use a dual axis line plot to plot both CPI and Amazon data side by side. 
+Use a multi line plot to show price fluctuations over multiple categories at the same time.
+
