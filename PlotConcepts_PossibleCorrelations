@@ -3,3 +3,43 @@ Calculate the inflation adjusted prices for Amazon products. Plot side by side w
 Use a dual axis line plot to plot both CPI and Amazon data side by side. 
 Use a multi line plot to show price fluctuations over multiple categories at the same time.
 
+Correlations for further research: 
+Seasonal effects: Seeing if amazon product prices follow seasonal patterns 
+External Shocks: See if third party events have had an impact on supply chains or inflation prices 
+Subcategory correlation: Asses which cateogires move at the same time which can help us see if there is a market wide effect or a algorithim driven pricing 
+
+Possible Plots: 
+Time series plot - Visiuzalises general trends and patterns over time with emphasis on periods of volatility. Would allow us to easily notice if Amazon prices are increasing faster or slower than the CPI
+
+
+subcategory = 'energy drinks' 
+subcategory_df = products_df[products_df['subcategory'] == subcategory]
+monthly_avg = subcategory_df.iloc[:, 3:].mean()
+# Plotting the average monthly prices
+plt.figure(figsize=(12, 6))
+monthly_avg.plot(marker='o', linestyle='-', linewidth=2)
+plt.title(f"Average Monthly Prices for '{subcategory.title()}' (2021-2024)")
+plt.xlabel("Month")
+plt.ylabel("Average Price ($)")
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+\
+
+Correlation Martix for subcategories - Shows if two items are closely related or indpendent pricing trends are in Amazons top selling product category. It also helps with understanding if said categories are reacting to similar extnernal market pressure or if they behave unqiquely
+This is important because if say two categories are high in correlation it implies that they share similar pricing influence due to other factors possibly such as supply chain or similar ocnsumer habits. 
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Top 10 most frequent subcategories
+top_subcategories = products_df['subcategory'].value_counts().head(10).index
+monthly_prices_top = products_df[products_df['subcategory'].isin(top_subcategories)].groupby('subcategory').mean().iloc[:, 1:].T
+correlation_matrix_top = monthly_prices_top.corr()
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", fmt=".2f")
+plt.title("Correlation of Monthly Price Trends Among Top 10 Subcategories")
+plt.xlabel("Subcategory")
+plt.ylabel("Subcategory")
+plt.show()
