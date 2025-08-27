@@ -1,20 +1,33 @@
-This is your group repo for your final project for COGS108.
+# Amazon Pricing Analysis
 
-This repository is private, and is only visible to the course instructors and your group mates; it is not visible to anyone else.
+This study investigated how Amazon product pricing has evolved from 2021 to 2024 relative to broader inflation trends represented by the Consumer Price Index (CPI). Using Amazon pricing data from Keepa across multiple product categories and CPI datasets from the U.S. Bureau of Labor Statistics, we analyzed the correlation between Amazon pricing and inflation. These data sets were used to determine whether Amazon's product pricing closely mirrored general inflation trends or if other factors like competition, algorithm-driven pricing decisions, and consumer purchasing behaviors led to noticeable deviations. Exploring these patterns across multiple years enabled a detailed understanding of Amazon's pricing strategies within the context of wider economic changes.
 
-Template notebooks for each component are provided. Only work on the notebook prior to its due date. After each submission is due, move onto the next notebook (For example, after the proposal is due, start working in the Data Checkpoint notebook). 
+📺 **Presentation Video:** [Watch here](https://youtu.be/C58f6Q41DJw)
 
-This repository will be frozen on the final project due date. No further changes can be made after that time.
+---
 
-Your project proposal and final project will be graded based solely on the corresponding project notebooks in this repository.
+## Study Summary
 
-Template Jupyter notebooks have been included, with your group number replacing the XXX in the following file names. For each due date, make sure you have a notebook present in this repository by each due date with the following name (where XXX is replaced by your group number):
+Using various methods of data analysis, the correlation between Amazon product prices and the CPI was explored. Visualizations such as line charts and scatter plots showcased pricing trends across different product categories, highlighting changes over time and revealing instances where Amazon prices moved in parallel or diverged from CPI trends. By examining these trends, other price adjustments became evident, which helped identify potential influences beyond inflation.  
 
-- `ProjectProposal_groupXXX.ipynb`
-- `DataCheckpoint_groupXXX.ipynb`
-- `EDACheckpoint_groupXXX.ipynb`
-- `FinalProject_groupXXX.ipynb`
+A permutation-based hypothesis test was then conducted to further identify the relationship between Amazon and the CPI. The combination of these analysis methods provided insightful results displaying the relationship between inflation, and other factors that shape Amazon’s pricing strategy.
 
-This is *your* repo. You are free to manage the repo as you see fit, edit this README, add data files, add scripts, etc. So long as there are the four files above on due dates with the required information, the rest is up to you all. 
+**Key Findings:**
+- Amazon prices and CPI show statistically significant correlation in certain market segments (e.g., food).  
+- Divergences exist in categories like toys and apparel, where competition, algorithmic pricing, and consumer dynamics play stronger roles.  
+- Amazon prices may **lead or lag CPI trends**, complicating the determination of true market dynamics.  
 
-Also, you are free and encouraged to share this project after the course and to add it to your portfolio. Just be sure to fork it to your GitHub at the end of the quarter!
+**Limitations:**
+- CPI categories lack direct product-level alignment with Amazon’s dataset.  
+- Timing mismatches between CPI reports and Amazon pricing shifts reduce precision in trend attribution.  
+
+**Implications:**
+- Consumers gain insights into how pricing aligns with inflation, supporting informed purchasing decisions.  
+- Retailers and analysts can learn from Amazon’s pricing strategies to refine their own dynamic pricing models.  
+
+---
+
+## Repository Structure
+- `PriceAnalysis.ipynb` → Main analysis notebook  
+- `ProjectProposal.ipynb` → Initial proposal and scoping of study  
+- `data/` → Datasets used in analysis 
